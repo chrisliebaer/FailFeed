@@ -101,7 +101,8 @@ local Spells = {
 
 	-- Halls of Infusion
 	[374075] = 20, -- Seismic Slam (Primalist Geomancer)
-	[393444] = 20, -- Spear Flurry / Gushing Wound (Refti Defender)
+	[393432] = 20, -- Spear Flurry (Refti Defender)
+	[393444] = 20, -- Gushing Wound (Refti Defender)
 	--[374045] = 20, -- Expulse (Containment Apparatus) - no indicator
 	[375215] = 20, -- Cave In (Curious Swoglet)
 	[374563] = 20, -- Dazzle (Dazzling Dragonfly)
@@ -526,7 +527,7 @@ local Spells = {
 	[278467] = 20, -- Caustic Freehold Brew (Rummy Mancomb, Council o' Captains)
 	[257902] = 20, -- Shell Bounce (Ludwig Von Tortollan, Ring of Booty)
 	[256546] = 20, -- Shark Tornado (Trothak, Ring of Booty)
-	--[256477] = 20, -- Shark Toss (Trothak, Ring of Booty) - TODO is this avoidable?
+	[256477] = 20, -- Shark Toss (Trothak, Ring of Booty)
 	[256552] = 20, -- Flailing Shark (Trothak, Ring of Booty)
 	[256706] = 20, -- Rearm (Trothak, Ring of Booty)
 	[257310] = 20, -- Cannon Barrage (Harlan Sweete)
@@ -583,7 +584,7 @@ local Spells = {
 	[226388] = 20, -- Rancid Ooze (Tarspitter Luker)
 	[226287] = 20, -- Crush (Vileshard Chunk)
 	[183088] = 20, -- Avalanche, Frontal (Mightstone Breaker)
-	--[183100] = 20, -- Avalanche, Rocks (Mightstone Breaker) - TODO is this avoidable?
+	[183100] = 20, -- Avalanche, Rocks (Mightstone Breaker)
 	--[226347] = 20, -- Stone Shatter (Stoneclaw Hunter / Stoneclaw Grubmaster) - TODO probably not avoidable for melee
 	[186576] = 20, -- Petrifying Cloud (Petrifying Totem, Blightshard Shaper)
 	[202089] = 20, -- Scorch (Burning Geode)
@@ -783,7 +784,7 @@ local Spells = {
 	-- [**Cataclysm**] 
 	-- Vortex Pinnacle
 	[410999] = 20, -- Pressurized Blast (Armored Mistral)
-	--[411001] = 20, -- Lethal Current (Lurking Tempest) - should this be considered avoidable?
+	[411001] = 20, -- Lethal Current (Lurking Tempest)
 	[411005] = 20, -- Bomb Cyclone (Cloud Prince)
 	[88308] = 20, -- Chilling Breath (Young Storm Dragon / Altairus)
 	[88963] = 20, -- Lightning Lash (Minister of Air)
@@ -815,15 +816,16 @@ local SpellsNoTank = {
     [375341] = 20, -- Tectonic Breath (Subterranean Proto-Drake)
     [375353] = 20, -- Oceanic Breath (Glacial Proto-Drake)
     [384524] = 20, -- Titanic Fist (Watcher Irideus)
-    --[388245] = 20, -- Gulp (Gulping Goliath) - TODO how to handle this properly?
+		[387571] = 20, -- Focused Deluge (Primal Tsunami)
+		[387504] = 20, -- Squall Buffet (Primal Tsunami)
 	
 	    -- Brackenhide Hollow
-    [382712] = 20, -- Necrotic Breath, Initial (Wilted Oak)
-    [382805] = 20, -- Necrotic Breath, DoT (Wilted Oak)
-  	--[374544] = 20, -- Burst of Decay (Fetid Rotsinger) - TODO does this only target tank?
+  	[374544] = 20, -- Burst of Decay (Fetid Rotsinger) - TODO does this only target tank?
     [377807] = 20, -- Cleave (Rira Hackclaw)
     [381419] = 20, -- Savage Charge (Rira Hackclaw)
     [377559] = 20, -- Vine Whip (Treemouth)
+		[385833] = 20, -- Bloodthirsty Charge (Rageclaw) (Knockback)
+		[385834] = 20, -- Bloodthirsty Charge (Rageclaw) (Dot)
 	
 	
 	--[=====[
@@ -890,7 +892,7 @@ local SpellsNoTank = {
 	[188494] = 20, -- Rancid Maw (Naraxas)
 	[205609] = 20, -- Rancid Maw (Naraxas) - TODO ID?
 	[200721] = 20, -- Landslide (Dargrul)
-	[226406] = 20, -- Ember Swip (Emberhusk Dominator)
+	[200732] = 20, -- Molten Crash (Dargrul)
 	[193505] = 20, -- Fracture (Vileshard Hulk)
 
 	--[=====[ 
@@ -1024,6 +1026,9 @@ local Auras = {
 }
 
 local AurasNoTank = {
+
+	-- Halls of Infusion
+	[374615] = 20, -- Cheap Shot (Skulking Zealot)
 }
 
 local MeleeHitters = {
