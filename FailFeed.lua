@@ -698,6 +698,11 @@ end
 
 function FailureTracker:report(player, source, spellString, damageColor, amount)
 
+	-- sometimes there is no source
+	if not source then
+		source = "Environment"
+	end
+
 	local playerString = formatPlayer(player)
 	local sourceString = "|cFFFFFFFF" .. source .. "|r"
 
