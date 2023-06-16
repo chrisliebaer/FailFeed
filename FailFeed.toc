@@ -1,7 +1,7 @@
 ## Interface: 100100
 
 ## Title: FailFeed
-## Notes: Live feed for you brain damaged team mates.
+## Notes: Live feed for your brain damaged team mates.
 ## Author: Chrisliebär
 ## Version: 1
 ## IconTexture: Interface\Icons\inv_misc_food_95_grainbread
