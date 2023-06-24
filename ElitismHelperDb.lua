@@ -809,7 +809,7 @@ local SpellsNoTank = {
     [375727] = 20, -- Sand Breath (Chrono-Lord Deios)
 
     -- Neltharus
-    [384019] = 20, -- Fiery Focus (Chargath, Bane of Scales)
+    [396332] = 20, -- Fiery Focus (Chargath, Bane of Scales)
 	
 	   -- Halls of Infusion
     [375349] = 20, -- Gusting Breath (Gusting Proto-Drake)
@@ -993,6 +993,7 @@ local Auras = {
 	[274516] = true, -- Slippery Suds (Bilge Rat Swabby)
 	[272554] = true, -- Bloody Mess (Trothak, Ring of Booty)
 	[268283] = true, -- Obscured Vision (Booty Fanatic, Ring of Booty)
+	[274507] = true, -- Slippery (Bilge Rat Swabby)
 
 
 	--[=====[ 

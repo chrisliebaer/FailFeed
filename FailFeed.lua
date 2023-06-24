@@ -710,11 +710,6 @@ function FailureTracker:report(player, source, spellString, damageColor, amount)
 	local text = playerString .. " hit by " .. spellString .. " from " .. sourceString
 	local percentage = 0
 	if amount then
-		-- prefix with skull if player doesn't have enough health to survive the hit
-		local prefix = ""
-		if UnitHealth(player) <= amount then
-			prefix = "|TInterface\\TargetingFrame\\UI-TargetingFrame-Skull:0|t "
-		end
 
 		percentage = math.floor(amount / UnitHealthMax(player) * 100)
 		local amountString = "|c" .. damageColor .. formatNumber(amount) .. " (" .. percentage .. "%)|r"
