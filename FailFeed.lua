@@ -7,6 +7,7 @@ local aceConfig = LibStub("AceConfig-3.0")
 local aceConfigDialog = LibStub("AceConfigDialog-3.0")
 local aceDB = LibStub("AceDB-3.0")
 local aceDBOptions = LibStub("AceDBOptions-3.0")
+local aceAddon = LibStub("AceAddon-3.0")
 
 -- classes
 local FrameDecay = {}
@@ -713,7 +714,7 @@ function FailureTracker:report(player, source, spellString, damageColor, amount)
 
 		percentage = math.floor(amount / UnitHealthMax(player) * 100)
 		local amountString = "|c" .. damageColor .. formatNumber(amount) .. " (" .. percentage .. "%)|r"
-		text = prefix .. playerString .. " hit by " .. spellString .. " for " .. amountString .. " from " .. sourceString
+		text = playerString .. " hit by " .. spellString .. " for " .. amountString .. " from " .. sourceString
 	end
 
 	if percentage >= self.percentage then
@@ -818,7 +819,7 @@ function FailureTracker:COMBAT_LOG_EVENT_UNFILTERED()
 	end
 end
 
-local FailFeed = LibStub("AceAddon-3.0"):NewAddon(addonName, "AceConsole-3.0")
+local FailFeed = aceAddon:NewAddon(addonName, "AceConsole-3.0")
 
 function FailFeed:OnInitialize()
 	OptionsManager:init(self)

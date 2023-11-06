@@ -17,4 +17,3 @@ Sometimes it a mix of both, but you are an adult and can decide for yourself.
 # Known Bugs / Wishlist
 * Ideally the addon would use EliteHelper's spell database directly, but EliteHelper does not currently expose it's database
 * Damage taken is calculated wrong but I could not find any documentation on how to accurately get the effective damage taken
-* CI builds could be improved to include external dependencies rather than committing them to the repo and to include a version number directly from the CI pipeline

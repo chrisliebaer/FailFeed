@@ -1,3 +1,5 @@
 <Ui xsi:schemaLocation="http://www.blizzard.com/wow/ui/ ..\FrameXML\UI.xsd">
-	<Include file="Libs\libs.xml"/>
+  
+	<Include file="Bundled.xml"/>
+
 </Ui>
