@@ -786,6 +786,7 @@ function FailureTracker:COMBAT_LOG_EVENT_UNFILTERED()
 	-- START of ElitismHelper code
 	local timestamp, eventType, hideCaster, srcGUID, srcName, srcFlags, srcFlags2, dstGUID, dstName, dstFlags, dstFlags2 = CombatLogGetCurrentEventInfo(); -- Those arguments appear for all combat event variants.
 	local eventPrefix, eventSuffix = eventType:match("^(.-)_?([^_]*)$");
+
 	if (eventPrefix:match("^SPELL") or eventPrefix:match("^RANGE")) and eventSuffix == "DAMAGE" then
 		local spellId, spellName, spellSchool, sAmount, aOverkill, sSchool, sResisted, sBlocked, sAbsorbed, sCritical, sGlancing, sCrushing, sOffhand, _ = select(12, CombatLogGetCurrentEventInfo())
 		ElitismFrame:SpellDamage(timestamp, eventType, srcGUID, srcName, srcFlags, dstGUID, dstName, dstFlags, spellId, spellName, spellSchool, sAmount)
@@ -808,6 +809,11 @@ function FailureTracker:COMBAT_LOG_EVENT_UNFILTERED()
 
 	-- start of own code
 	if eventType == "UNIT_DIED" and UnitIsPlayer(dstName) then
+		-- hunter feign death is not a real death
+		if UnitClass(dstName) == "Hunter" and UnitIsFeignDeath(dstName) then
+			return
+		end
+
 		self:reportDeath(dstName)
 	end
 end
