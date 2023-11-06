@@ -8,7 +8,7 @@ on:
       - master
 
 jobs:
-  release:
+  check:
     runs-on: ubuntu-latest
     env:
       GITHUB_OAUTH: ${{ secrets.GITHUB_TOKEN }}
@@ -23,10 +23,10 @@ jobs:
       - name: Package
         uses: BigWigsMods/packager@v2
         with:
-          args: -d -r ".release"
+          args: -d -r "${{ github.workspace }}/.release"
       
       - name: Upload artifact
         uses: actions/upload-artifact@v2
         with:
           name: package
-          path: ".release"
+          path: "${{ github.workspace }}/.release"

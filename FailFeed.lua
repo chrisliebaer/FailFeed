@@ -714,7 +714,7 @@ function FailureTracker:report(player, source, spellString, damageColor, amount)
 
 		percentage = math.floor(amount / UnitHealthMax(player) * 100)
 		local amountString = "|c" .. damageColor .. formatNumber(amount) .. " (" .. percentage .. "%)|r"
-		text = prefix .. playerString .. " hit by " .. spellString .. " for " .. amountString .. " from " .. sourceString
+		text = playerString .. " hit by " .. spellString .. " for " .. amountString .. " from " .. sourceString
 	end
 
 	if percentage >= self.percentage then
