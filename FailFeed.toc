@@ -1,16 +1,16 @@
-## Interface: 100100
+## Interface: 100107
 
 ## Title: FailFeed
 ## Notes: Live feed for your brain damaged team mates.
 ## Author: Chrisliebär
-## Version: 1
+## Version: @project-version@
 ## IconTexture: Interface\Icons\inv_misc_food_95_grainbread
-## X-License: GNU Affero General Public License
-## OptionalDeps: Ace3, LibStub, LibSharedMedia-3.0
-
+## OptionalDeps: LibStub, Ace3, LibSharedMedia-3.0, AceGUI-3.0-SharedMediaWidgets
 ## SavedVariables: FailFeedDB
 
-embeds.xml
+## X-License: GNU Affero General Public License
+
+Libs\libs.xml
 
 ElitismHelperDb.lua
 FailFeed.lua

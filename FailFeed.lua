@@ -7,6 +7,7 @@ local aceConfig = LibStub("AceConfig-3.0")
 local aceConfigDialog = LibStub("AceConfigDialog-3.0")
 local aceDB = LibStub("AceDB-3.0")
 local aceDBOptions = LibStub("AceDBOptions-3.0")
+local aceAddon = LibStub("AceAddon-3.0")
 
 -- classes
 local FrameDecay = {}
@@ -818,7 +819,7 @@ function FailureTracker:COMBAT_LOG_EVENT_UNFILTERED()
 	end
 end
 
-local FailFeed = LibStub("AceAddon-3.0"):NewAddon(addonName, "AceConsole-3.0")
+local FailFeed = aceAddon:NewAddon(addonName, "AceConsole-3.0")
 
 function FailFeed:OnInitialize()
 	OptionsManager:init(self)
