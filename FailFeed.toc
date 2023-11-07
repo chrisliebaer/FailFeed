@@ -12,5 +12,7 @@
 
 embeds.xml
 
-ElitismHelperDb.lua
+db/EHDB.lua
+db/Overrides.lua
+
 FailFeed.lua

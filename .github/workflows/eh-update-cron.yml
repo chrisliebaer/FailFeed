@@ -1,0 +1,30 @@
+# This workflow is run periodically to check for new versions of the ElitismHelper addon.
+# Once a new version is found, it's spell database is extracted and a new pull request is created.
+
+name: Check ElitismHelper for updates
+
+on:
+  workflow_dispatch:
+  schedule:
+    # every day at 4am UTC
+    - cron: '0 4 * * *'
+
+jobs:
+  update-checker:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone project
+        uses: actions/checkout@v3
+
+      - name: Run update script
+        id: update
+        run: ./tools/update.sh
+        
+      - name: Create or update pull request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          branch: ci/update-ehdb
+          delete-branch: true
+          title: "${{ steps.update.outputs.pr_title }}"
+          commit-message: "${{ steps.update.outputs.pr_title }}"
+          body: "${{ steps.update.outputs.pr_body }}"
