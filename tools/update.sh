@@ -2,7 +2,7 @@
 
 set -eo pipefail
 
-# This script is called by the GitHub action workflow periodically to check for new updates to EliteHelper.
+# This script is called by the GitHub action workflow periodically to check for new updates to ElitismHelper.
 # If an update is found, the script will commit the changes. A later step in the workflow will create a pull request, if necessary.
 # If the hashes are different, there is an update and a PR needs to be updated, which will be done by the workflow.
 # The workflow will ensure that commits based on the same ElitismHelper commit are resulting in the same commit hash.
@@ -31,7 +31,7 @@ echo "New hash: $new_hash"
 
 # If hashes are the same, there is no update.
 if [[ "$old_hash" == "$new_hash" ]]; then
-	echo "No update found. EliteHelper is up to date."
+	echo "No update found. ElitismHelper is up to date."
 	exit 0
 fi
 
@@ -49,12 +49,17 @@ echo "Update found. Committing changes."
 # Using same commit date as ElitismHelper to create the same commit hash even on multiple runs.
 EHDB_GIT_COMMIT="$(git --git-dir="$ehdb_git/.git" rev-parse HEAD)"
 EHDB_GIT_SHORT_COMMIT="$(git --git-dir="$ehdb_git/.git" rev-parse --short HEAD)"
-GIT_COMMITTER_DATE="$(git --git-dir="$ehdb_git/.git" show -s --format=%cI "$EHDB_GIT_COMMIT")"
-GIT_AUTHOR_DATE="$(git --git-dir="$ehdb_git/.git" show -s --format=%aI "$EHDB_GIT_COMMIT")"
+GIT_AUTHOR_DATE="$(git --git-dir="$ehdb_git/.git" show -s --format=%ai "$EHDB_GIT_COMMIT")"
+
+git config user.name "GitHub"
+git config user.email "noreply@github.com"
 
 git add "$EHDB_FILE"
-git commit -m "🍱 Update EliteHelper database to $EHDB_GIT_SHORT_COMMIT"
+git commit -m "🍱 Update ElitismHelper database to $EHDB_GIT_SHORT_COMMIT" --date="$GIT_AUTHOR_DATE"
+
+# fix date of commit to match ElitismHelper
+git rebase --committer-date-is-author-date HEAD~1
 
 # Pass details to the GitHub action workflow.
-echo "pr_title=🍱 Update EliteHelper database to $EHDB_GIT_SHORT_COMMIT" >> "$GITHUB_OUTPUT"
-echo "pr_body=This PR updates the EliteHelper database to the latest version of ElitismHelper ($EHDB_GIT_SHORT_COMMIT)." >> "$GITHUB_OUTPUT"
+echo "pr_title=🍱 Update ElitismHelper database to $EHDB_GIT_SHORT_COMMIT" >> "$GITHUB_OUTPUT"
+echo "pr_body=This PR updates the ElitismHelper database to the latest version of ElitismHelper ($EHDB_GIT_SHORT_COMMIT)." >> "$GITHUB_OUTPUT"

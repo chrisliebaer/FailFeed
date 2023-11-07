@@ -15,5 +15,4 @@ Sometimes it a mix of both, but you are an adult and can decide for yourself.
 * No one knows you are using it
 
 # Known Bugs / Wishlist
-* Ideally the addon would use EliteHelper's spell database directly, but EliteHelper does not currently expose it's database
-* Damage taken is calculated wrong but I could not find any documentation on how to accurately get the effective damage taken
+* Damage taken does not take certain absorbs or immunities into account. So damage taken should not be taken as the amount of damage that actually went through, but rather as a measure of how much damage the player was exposed to.
