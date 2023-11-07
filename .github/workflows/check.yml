@@ -1,6 +1,6 @@
 # When in need, check documentation https://github.com/BigWigsMods/packager/wiki/GitHub-Actions-workflow
 
-name: Package and release
+name: Test packaging
 
 on:
   pull_request:
