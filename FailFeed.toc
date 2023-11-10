@@ -1,4 +1,4 @@
-## Interface: 100107
+## Interface: 100200
 
 ## Title: FailFeed
 ## Notes: Live feed for your brain damaged team mates.
@@ -9,6 +9,7 @@
 ## SavedVariables: FailFeedDB
 
 ## X-License: GNU Affero General Public License
+## X-Curse-Project-ID: 935833
 
 embeds.xml
 
