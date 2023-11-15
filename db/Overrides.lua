@@ -18,6 +18,22 @@ overrides.Spells = {
 	[183100] = true, -- Avalanche, Rocks (Mightstone Breaker)
 	[411001] = true, -- Lethal Current (Lurking Tempest)
 
+	[264698] = true, -- Rotten Expulsion (Raal the Gluttonous) (Puddle)
+
+	[172579] = true, -- Bounding Whirl (Melded Berserker)
+	[169495] = true, -- Living Leaves (Gnarlroot)
+	[427513] = true, -- Noxious Discharge (Dulhu)
+	[426845] = true, -- Cold Fusion (Infested Icecaller) (Initial)
+	[426849] = true, -- Cold Fusion (Infested Icecaller) (Orb)
+	[426982] = true, -- Spatial Disruption (Addled Arcanomancer)
+	[428082] = true, -- Glacial Fusion (Archmage Sol) (Initial)
+	[428084] = true, -- Glacial Fusion (Archmage Sol) (Orb)
+	[426991] = true, -- Blazing Cinders (Archmage Sol)
+	[428148] = true, -- Spatial Compression (Archmage Sol)
+	[428834] = true, -- Verdant Eruption (Yalnu)
+	[169179] = true, -- Colossal Blow (Yalnu)
+	[169930] = true, -- Lumbering Swipe (Gnarled Ancient)
+
 	-- ... add entries here
 }
 
