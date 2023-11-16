@@ -46,6 +46,16 @@ overrides.Spells = {
 	[200329] = true, -- Overwhelming Terror (Shade of Xavius)
 	[200111] = true, -- Apocalyptic Fire (Shade of Xavius)
 
+	[194960] = true, -- Soul Echos (Lord Etheldrin Ravencrest)
+
+	[194956] = true, -- Reap Soul (Amalgam of Souls)
+	[200261] = true, -- Bonebreaking Strike (Soul-Torn Champion)
+	[200344] = true, -- Arrow Barrage (Risen Archer) (Channel)
+	[197974] = true, -- Bonecrushing Strike (Illysanna Ravencrest) (Add)
+	[201175] = true, -- Throw Priceless Artifact (Wyrmtongue Scavenger)
+	[214002] = true, -- Raven's Dive (Risen Lancer)
+
+
 	-- ... add entries here
 }
 
@@ -73,6 +83,9 @@ overrides.Auras = {
 	-- ... add entries here
 
 	[200273] = true, -- Cowardice (Shade of Xavious)
+
+	[194960] = true, -- Soul Echos (Lord Etheldrin Ravencrest)
+	[199097] = true, -- Cloud of Hypnosis (Dantalionax)
 }
 
 overrides.AurasNoTank = {
