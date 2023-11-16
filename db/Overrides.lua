@@ -56,6 +56,21 @@ overrides.Spells = {
 	[214002] = true, -- Raven's Dive (Risen Lancer)
 
 
+	[426727] = true, -- Acid Barrage (Naz'jar Ravager)
+	[426645] = true, -- Acid Barrage (Naz'jar Ravager)
+	[426688] = true, -- Volatile Acid (Naz'jar Ravager)
+	[427769] = true, -- Geyser (Lady Naz'jar)
+	[428294] = true, -- Trident Flurry (Honor Guard)
+
+	[427672] = true, -- Bubbling Fissure (Commander Ulthok) (Initial)
+	[427565] = true, -- Bubbling Fissure (Commander Ulthok) (AoE)
+	[427559] = true, -- Bubbling Ooze (Commander Ulthok) (Moving AoE)
+	[426681] = true, -- Electric Jaws (Electrified Behemoth)
+	[76590] = true, -- Shadow Smash (Faceless Watcher)
+	[426808] = true, -- Null Blast (Faceless Seer)
+	[429172] = true, -- Terrifying Vision (Erunak Stonespeaker)
+	
+
 	-- ... add entries here
 }
 
@@ -74,6 +89,9 @@ overrides.SpellsNoTank = {
 	[198386] = true, -- Primal Rampage (Archdruid Glaidalis)
 	[198376] = true, -- Primal Rampage (Archdruid Glaidalis)
 	[204667] = true, -- Nightmare Breath (Oakheart)
+
+	[428530] = true, -- Murk Spew (Ink of Ozumat)
+	[428616] = true, -- Deluge of Filth (Ozumat)
 
 
 	-- ... add entries here
