@@ -34,6 +34,18 @@ overrides.Spells = {
 	[169179] = true, -- Colossal Blow (Yalnu)
 	[169930] = true, -- Lumbering Swipe (Gnarled Ancient)
 
+	[255372] = true, -- Tail (Rezan)
+	[255373] = true, -- Tail (Rezan)
+
+	-- actually always hits tank?
+	[198376] = false, -- Primal Rampage (Archdruid Glaidalis)
+	[198386] = false, -- Primal Rampage (Archdruid Glaidalis)
+
+	[191326] = true, -- Breath of Corruption (Dresaron)
+	[199460] = true, -- Falling Rocks (Dresaron)
+	[200329] = true, -- Overwhelming Terror (Shade of Xavius)
+	[200111] = true, -- Apocalyptic Fire (Shade of Xavius)
+
 	-- ... add entries here
 }
 
@@ -49,11 +61,18 @@ overrides.SpellsNoTank = {
 	[385834] = true, -- Bloodthirsty Charge (Rageclaw) (Dot)
 	[200732] = true, -- Molten Crash (Dargrul)
 
+	[198386] = true, -- Primal Rampage (Archdruid Glaidalis)
+	[198376] = true, -- Primal Rampage (Archdruid Glaidalis)
+	[204667] = true, -- Nightmare Breath (Oakheart)
+
+
 	-- ... add entries here
 }
 
 overrides.Auras = {
 	-- ... add entries here
+
+	[200273] = true, -- Cowardice (Shade of Xavious)
 }
 
 overrides.AurasNoTank = {
