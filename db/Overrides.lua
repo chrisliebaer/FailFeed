@@ -31,7 +31,6 @@ overrides.Spells = {
 	[426991] = true, -- Blazing Cinders (Archmage Sol)
 	[428148] = true, -- Spatial Compression (Archmage Sol)
 	[428834] = true, -- Verdant Eruption (Yalnu)
-	[169179] = true, -- Colossal Blow (Yalnu)
 	[169930] = true, -- Lumbering Swipe (Gnarled Ancient)
 
 	[255372] = true, -- Tail (Rezan)
