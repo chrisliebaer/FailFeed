@@ -31,6 +31,7 @@ local Spells = {
 	[394873] = 20, -- Lightning Strike (Season 1 Thundering)
 	[396411] = 20, -- Primal Overload (Season 1 Thundering)
 
+	--[=====[
 	-- Uldaman: Legacy of Tyr
 	[369811] = 20, -- Brutal Slam (Hulking Berserker)
 	[369854] = 20, -- Throw Rock (Burly Rock-Thrower)
@@ -128,6 +129,7 @@ local Spells = {
 	[387363] = 20, -- Infused Globule, Explosion (Primal Tsunami)
 	[388786] = 20, -- Rogue Waves (Primal Tsunami)
 
+	--[=====[ 
 	-- Algeth'ar Academy
 	[388884] = 20, -- Arcane Rain (Spellbound Scepter)
 	[388957] = 20, -- Riftbreath (Arcane Ravager)
@@ -230,6 +232,7 @@ local Spells = {
 	[376737] = 20, -- Lightning (Balakar Khan)
 	[376892] = 20, -- Crackling Upheaval (Balakar Khan)
 	[376899] = 20, -- Crackling Cloud (Balakar Khan) - TODO is first tick avoidable?
+	--]=====]
 
 	-- Dawn of the Infinite: Galakrond's Fall
 	[419447] = 20, -- Bronze Radiance (Environment)
