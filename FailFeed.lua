@@ -71,7 +71,7 @@ local DEFAULTS = {
 -- ace config table
 local optionsTable = {
 	name = addonName,
-	icon = GetAddOnMetadata(addonName, "IconTexture"),
+	icon = C_AddOns.GetAddOnMetadata(addonName, "IconTexture"),
 	type = "group",
 	args = {
 		config = {
