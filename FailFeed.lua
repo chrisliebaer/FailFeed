@@ -71,7 +71,7 @@ local DEFAULTS = {
 -- ace config table
 local optionsTable = {
 	name = addonName,
-	icon = GetAddOnMetadata(addonName, "IconTexture"),
+	icon = C_AddOns.GetAddOnMetadata(addonName, "IconTexture"),
 	type = "group",
 	args = {
 		config = {
@@ -315,7 +315,7 @@ local function formatPlayer(dstName)
 end
 
 local function formatSpell(spellId, spellName)
-	local spellTexture = GetSpellTexture(spellId)
+	local spellTexture = C_Spell.GetSpellTexture(spellId)
 
 	local formatted = ""
 
