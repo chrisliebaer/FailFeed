@@ -80,10 +80,10 @@ done
 cat << EOF >> "$2"
 
 ns.ehdb = {}
-ns.ehdb.Spells = Spells
-ns.ehdb.SpellsNoTank = SpellsNoTank
-ns.ehdb.Auras = Auras
-ns.ehdb.AurasNoTank = AurasNoTank
-ns.ehdb.MeleeHitters = MeleeHitters
+ns.ehdb.Spells = Spells or {}
+ns.ehdb.SpellsNoTank = SpellsNoTank or {}
+ns.ehdb.Auras = Auras or {}
+ns.ehdb.AurasNoTank = AurasNoTank or {}
+ns.ehdb.MeleeHitters = Swings or {}
 EOF
 
