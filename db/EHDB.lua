@@ -149,7 +149,6 @@ local Spells = {
 	[431494] = 20, -- Black Edge (Nightfall Tactician)
 	[432606] = 20, -- Black Hail (Manifested Shadow)
 	[451098] = 20, -- Tacky Nova (Sureki Militant)
-	[451115] = 20, -- Terrifying Slam, Area (Ixkreten the Unbreakable)
 	[460135] = 20, -- Dark Scars (Deathscreamer Iken'tak)
 	[431352] = 20, -- Tormenting Eruption, Splash (Nightfall Dark Architect)
 
@@ -1271,6 +1270,9 @@ local SpellsNoTank = {
 	[439764] = 20, -- Process of Elimination, Physical (Izo the Grand Splicer)
 	[439763] = 20, -- Process of Elimination, Shadow (Izo the Grand Splicer)
 	[450055] = 20, -- Gutburst (Ravenous Scarab, Izo the Grand Splicer) - is this reasonable?
+
+	-- The Dawnbreaker
+	[451115] = 20, -- Terrifying Slam, Area (Ixkreten the Unbreakable) - tank is always hit, but not feared
 
 	-- [**Dragonflight**]
 	--[=====[	
