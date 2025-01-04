@@ -7,7 +7,7 @@ set -eo pipefail
 # If the hashes are different, there is an update and a PR needs to be updated, which will be done by the workflow.
 # The workflow will ensure that commits based on the same ElitismHelper commit are resulting in the same commit hash.
 
-EHDB_REPO="https://github.com/amki/ElitismHelper"
+EHDB_REPO="https://github.com/edusperoni/Details_Elitism"
 EHDB_FILE="db/EHDB.lua"
 
 # redirect GIT_ENV to /dev/null on local runs
@@ -22,7 +22,7 @@ git clone --depth=1 "$EHDB_REPO" "$ehdb_git"
 old_hash="$(sha256sum "$EHDB_FILE" | cut -d' ' -f1)"
 
 # Fetch the latest version of ElitismHelper and extract the spell database.
-./tools/fetchDB.sh "$ehdb_git/ElitismHelper.lua" "$EHDB_FILE"
+./tools/fetchDB.sh "$ehdb_git/Spells/Dungeons.lua" "$EHDB_FILE"
 
 new_hash="$(sha256sum "$EHDB_FILE" | cut -d' ' -f1)"
 

@@ -41,7 +41,14 @@ function extractTable() {
 	output="$3"
 
 	# Extract the table.
-	sed -n "/local $name = {/,/}/p" "$file" > "$output"
+	# workaround for tables with just `{}` (empty table)
+	if grep -q "local $name = {.*}$" "$file"; then
+		# Table is empty (both braces on same line)
+		echo "local $name = {}" > "$output"
+	else
+		# Normal table extraction
+		sed -n "/local $name = {/,/}/p" "$file" > "$output"
+	fi
 }
 
 # list of tables to extract
@@ -50,12 +57,12 @@ tables=(
 	"SpellsNoTank"
 	"Auras"
 	"AurasNoTank"
-	"MeleeHitters"
+	"Swings"
 )
 
 mkdir -p "$workdir/tables"
 for table in "${tables[@]}"; do
-	extractTable "$ehdb" $table "$workdir/tables/$table.lua"
+	extractTable "$ehdb" "$table" "$workdir/tables/$table.lua"
 done
 
 # Write preambles to the output file.
