@@ -23,5 +23,10 @@ jobs:
         with:
           fetch-depth: 0 # required for changelog
 
+      - name: Install subversion
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y subversion
+
       - name: Package and release
         uses: BigWigsMods/packager@v2
