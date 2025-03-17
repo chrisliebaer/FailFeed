@@ -21,7 +21,7 @@ jobs:
         run: ./tools/update.sh
         
       - name: Create or update pull request
-        uses: peter-evans/create-pull-request@v5
+        uses: peter-evans/create-pull-request@v7
         with:
           branch: ci/update-ehdb
           delete-branch: true
