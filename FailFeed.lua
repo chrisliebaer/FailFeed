@@ -59,6 +59,10 @@ local DEFAULTS = {
 		horizontalAlignment = "LEFT",
 		percentage = 5,
 		lineHeight = 1,
+		soundPlayerDamage = "",
+		soundOtherDamage = "",
+		enableSoundPlayerDamage = false,
+		enableSoundOtherDamage = false,
 		windowProps = {
 			width = 500,
 			height = 200,
@@ -216,6 +220,51 @@ local optionsTable = {
 					min = 0,
 					max = 100,
 					step = 0.1,
+				},
+			}
+		},
+		sounds = {
+			name = "Sounds",
+			desc = "Sound settings for damage events",
+			type = "group",
+			handler = OptionsManager,
+			order = 3,
+			get = "get",
+			set = "set",
+			args = {
+				enableSoundPlayerDamage = {
+					name = "Enable Player Damage Sound",
+					desc = "Play a sound when the player takes avoidable damage",
+					type = "toggle",
+				},
+				soundPlayerDamage = {
+					name = "Player Damage Sound",
+					desc = "Sound to play when the player takes avoidable damage",
+					type = "select",
+					values = function(info)
+						return media:HashTable("sound")
+					end,
+					dialogControl = "LSM30_Sound",
+					disabled = function()
+						return not OptionsManager:get({"enableSoundPlayerDamage"})
+					end,
+				},
+				enableSoundOtherDamage = {
+					name = "Enable Other Player Damage Sound",
+					desc = "Play a sound when other players take avoidable damage",
+					type = "toggle",
+				},
+				soundOtherDamage = {
+					name = "Other Player Damage Sound",
+					desc = "Sound to play when other players take avoidable damage",
+					type = "select",
+					values = function(info)
+						return media:HashTable("sound")
+					end,
+					dialogControl = "LSM30_Sound",
+					disabled = function()
+						return not OptionsManager:get({"enableSoundOtherDamage"})
+					end,
 				},
 			}
 		}
@@ -720,7 +769,40 @@ function FailureTracker:report(player, source, spellString, damageColor, amount)
 	if percentage >= self.percentage then
 		local entry = self.feed:getNextEntry()
 		entry:setText(text)
+		
+		-- Play sound based on who took damage
+		self:playDamageSound(player)
 	end
+end
+
+function FailureTracker:playDamageSound(targetPlayer)
+	-- Check if the target is the current player
+	local isPlayer = (targetPlayer == GetUnitName("player"))
+	
+	if isPlayer then
+		-- Player took damage
+		if self.enableSoundPlayerDamage and self.soundPlayerDamage and self.soundPlayerDamage ~= "" then
+			local soundPath = media:Fetch("sound", self.soundPlayerDamage, true)
+			if soundPath then
+				PlaySoundFile(soundPath, "Master")
+			end
+		end
+	else
+		-- Other player took damage
+		if self.enableSoundOtherDamage and self.soundOtherDamage and self.soundOtherDamage ~= "" then
+			local soundPath = media:Fetch("sound", self.soundOtherDamage, true)
+			if soundPath then
+				PlaySoundFile(soundPath, "Master")
+			end
+		end
+	end
+end
+
+function FailureTracker:updateSoundSettings(profile)
+	self.enableSoundPlayerDamage = profile.enableSoundPlayerDamage
+	self.soundPlayerDamage = profile.soundPlayerDamage
+	self.enableSoundOtherDamage = profile.enableSoundOtherDamage
+	self.soundOtherDamage = profile.soundOtherDamage
 end
 
 function FailureTracker:reportDeath(player)
@@ -856,6 +938,9 @@ function FailFeed:SettingsChanged(db)
 	self.feed:verticalDirection(profile.verticalDirection)
 
 	self.tracker:setPercentage(profile.percentage)
+	
+	-- Update sound settings
+	self.tracker:updateSoundSettings(profile)
 
 	if profile.test then
 		-- check if timer is already running
@@ -867,8 +952,29 @@ function FailFeed:SettingsChanged(db)
 				local spellString = "|TInterface\\ICONS\\INV_Misc_QuestionMark:0|t|cFFFFFFFF" .. spell .. "|r"
 				local source = TEST_SOURCE[math.random(#TEST_SOURCE)]
 
+				-- Randomly choose between player and group member for testing
+				local testTargets = {GetUnitName("player")}
+				
+				-- Add some group members if available
+				for i = 1, 4 do
+					local unit = "party" .. i
+					if UnitExists(unit) and UnitIsPlayer(unit) then
+						table.insert(testTargets, GetUnitName(unit))
+					end
+				end
+				
+				-- Add raid members if available
+				for i = 1, 40 do
+					local unit = "raid" .. i
+					if UnitExists(unit) and UnitIsPlayer(unit) then
+						table.insert(testTargets, GetUnitName(unit))
+					end
+				end
+				
+				local targetName = testTargets[math.random(#testTargets)]
+
 				-- player, source, spellString, damageColor, amount)
-				self.tracker:report(GetUnitName("player"), source, spellString, spellColor, math.random(UnitHealthMax("player")))
+				self.tracker:report(targetName, source, spellString, spellColor, math.random(UnitHealthMax("player")))
 			end)
 		end
 	else
