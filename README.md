@@ -1,5 +1,28 @@
 ![Stading in Fire: Bad](https://raw.githubusercontent.com/chrisliebaer/FailFeed/master/.github/assets/badge/badge_fire.svg)
 
+# ⚠️ PROJECT ARCHIVED
+
+**This project is no longer maintained and has been archived as of January 2026.**
+
+## Why This Project Has Been Discontinued
+
+With the release of World of Warcraft's "Midnight" expansion and its pre-patch (Patch 12.0), Blizzard has fundamentally restricted addon access to the combat API.
+This makes it impossible for this addon to continue functioning as intended.
+
+Thanks for an amazing 20 years of WoW addons everyone!
+The Addon community will never be the same again and encounters will likely not improve, as they haven't in the last 20 years.
+
+## Acknowledgments
+
+This project would not have been possible without the incredible work of others.
+
+- Special thanks to **[Tribunate](https://github.com/Tribunate)** for maintaining and updating the spell database across multiple seasons. Your contributions kept the addon possible.
+- Thanks to the [ElitismHelper](https://github.com/amki/ElitismHelper) project for the foundational spell database that this addon was built upon.
+
+---
+
+## Original Description
+
 FailFeed is a World of Warcraft addon for Mythic+ that displays a "kill"-feed of the stuff your boosted monkey team mates are taking avoidable damage from.
 Similar to [ElitismHelper](https://github.com/amki/ElitismHelper) but just for you without spaming the chat.
 In fact most of the internal spell database is taken from ElitismHelper.
